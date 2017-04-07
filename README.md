@@ -13,7 +13,7 @@ _This webpage is a form with which collects the users name, pizza size and pizza
 | Behavior |  Input   |  Output  |
 |----------|:--------:|:--------:|
 |Users will be able to submit their name, requested pizza size and toppings in the form.| Name: "Nicky", Pizza Size: "Medium" Toppings: "Pepperoni, Mushrooms"||
-|Upon the submit the users will receive the cost of their order under the order details section.|Name: "Nicky", Pizza Size: "Medium" Toppings: "Pepperoni, Mushrooms"|Your total cost is "$20."|
+|Upon the submit the users will receive the full details of their order and the cost of their order under the order details section.|Name: "Nicky", Address: "1010 Street, city, state, zip" Pizza Size: "Medium" Toppings: "Pepperoni, Mushrooms"|Your total cost is "$20."|
 
 ## Setup/Installation Requirements
 
@@ -40,7 +40,7 @@ _Please contact Nicole Santamaria at NicoleRSantamaria@gmail.com if you have any
 
 ## Technologies Used
 
-_The output of this form are hidden until the submit button is clicked._
+_The output of this form are hidden until the submit button is clicked. The name, address fields and pizza size are required. If the user does not select any toppings the header under the order details will not appear._
 
 ### License
 

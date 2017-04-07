@@ -26,6 +26,11 @@ strong {
 .btn {
   background-color: #A6002F;
   color: white;
+  position: absolute;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  font-size: 20px;
 }
 
 .orderLink {

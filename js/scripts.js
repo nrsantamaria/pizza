@@ -81,7 +81,13 @@ $(document).ready(function(){
       //call function to return customer address
       $("#customerAddress").text(newOrder.addressGroup());
       $("#orderPizzaSize").text(newOrder.orderPizzaSize);
-      $("#orderPizzaToppings").text(newOrder.orderPizzaToppings.slice().join(", "));
+      //if statement to hide toppings header if none are selected by the user
+      if (newOrder.orderPizzaToppings.length >= 1){
+        $("#orderPizzaToppings").text(newOrder.orderPizzaToppings.slice().join(", "));
+      } else {
+        $("#toppingsHeader").empty();
+      };
+      
       $("#total-cost").text(newPizzaStore.currentOrder.pizzaPrice);
     });
   });//form function close
