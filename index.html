@@ -22,6 +22,25 @@
                 <label for="name">Please enter your name:</label>
                 <input id="name" type="text" class="form-control" required>
               </div>
+              <div id="address-group">
+                <label for="address">Please provide your address for delivery:</label>
+                <div class="form-group">
+                  <label for="street">Street:</label>
+                  <input class="form-control" id="street-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="city">City:</label>
+                  <input class="form-control" id="city-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="state">State:</label>
+                  <input class="form-control" id="state-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="zipCode">Zip Code:</label>
+                  <input class="form-control" id="zipCode-input" type="text">
+                </div>
+              </div><!--address group close -->
             </div> <!--first column close -->
           <div class="col-md-4">
             <label for="toppings">Select your pizza size:</label>
@@ -57,11 +76,10 @@
           <div class="output">
             <h2>Order Details</h2>
             <p><strong><span id="customerName"></span></strong>, thank you for your order! Our pizza technicians will start prepping right away!</p>
+            <p><strong>Address: </strong><span id="customerAddress"></span>
             <p><strong>Pizza Size: </strong><span id="orderPizzaSize"></span>
             <p><strong>Toppings:</strong></p>
-            <ul>
-              <li id="orderPizzaToppings"></li>
-            </ul>
+            <p id="orderPizzaToppings"></p>
             <p>Your total is: $<strong><span id="total-cost"></span></strong></p>
           </div> <!--output close -->
         </div> <!--third column close-->

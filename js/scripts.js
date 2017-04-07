@@ -5,11 +5,19 @@ function PizzaStore (pizzaSizes, pizzaToppings, currentOrder) {
   this.currentOrder;
 };
 
-function Order (customerName, orderPizzaSize) {
+function Order (customerName, street, city, state, zip, orderPizzaSize) {
   this.customerName = customerName;
+  this.customerStreet = street;
+  this.customerCity = city;
+  this.customerState = state;
+  this.customerZip = zip;
   this.orderPizzaSize = orderPizzaSize;
   this.orderPizzaToppings = [];
   this.pizzaPrice = 10;
+};
+
+Order.prototype.addressGroup = function (){
+  return (this.customerStreet + ", " + this.customerCity + ", " + this.customerState + " " + this.customerZip);
 };
 
 PizzaStore.prototype.orderPrice = function (){
@@ -27,6 +35,10 @@ PizzaStore.prototype.orderPrice = function (){
 
 Order.prototype.resetFields = function (){
   $("#name").val("");
+  $("#street-input").val("");
+  $("#city-input").val("");
+  $("#state-input").val("");
+  $("#zipCode-input").val("");
   $(".pizza-size").val("");
   $("input:checkbox[name=pizza-toppings]:checked").prop("checked", false);
 };
@@ -37,9 +49,14 @@ $(document).ready(function(){
   $("#order-form").submit(function(event){
     event.preventDefault();
     var nameInput = $("#name").val()
+    var streetInput = $("#street-input").val();
+    var cityInput = $("#city-input").val();
+    var stateInput = $("#state-input").val();
+    var zipCodeInput = $("#zipCode-input").val();
     var pizzaSizeInput = $(".pizza-size").val()
 
-    var newOrder = new Order(nameInput, pizzaSizeInput);
+
+    var newOrder = new Order(nameInput, streetInput, cityInput, stateInput, zipCodeInput, pizzaSizeInput);
     var newPizzaStore = new PizzaStore(newOrder);
 
     newPizzaStore.currentOrder = newOrder;
@@ -61,6 +78,8 @@ $(document).ready(function(){
     $(".orderLink").last().click(function(){
       $(".output").show();
       $("#customerName").text(newOrder.customerName);
+      //call function to return customer address
+      $("#customerAddress").text(newOrder.addressGroup());
       $("#orderPizzaSize").text(newOrder.orderPizzaSize);
       $("#orderPizzaToppings").text(newOrder.orderPizzaToppings.slice().join(", "));
       $("#total-cost").text(newPizzaStore.currentOrder.pizzaPrice);
