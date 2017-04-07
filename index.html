@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizza Palace</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Welcome to Pizza Palace!</h1>
+      <h2>Where you can order your favorite pizza, hot, fast and cheesy!</h2>
+    </div>
+    <div class="container">
+      <form id="order-form">
+        <div class="form-group">
+          <label for="name">Please enter your name:</label>
+          <input id="name" type="text" class="form-control">
+        </div>
+        <label for="toppings">Select your pizza size:</label>
+        <select class="form-control pizza-size">
+          <option selected="selected" disabled>Pizza Size</option>
+          <option value="Large">Large</option>
+          <option value="Medium">Medium</option>
+          <option value="Small">Small</option>
+        </select>
+        <br>
+        <label for="toppings">Select your toppings:</label>
+        <div class="toppings">
+          <input type="checkbox" name="pizza-toppings" value="bike"> Extra Cheese<br>
+          <input type="checkbox" name="pizza-toppings" value="bike"> Pepperoni<br>
+          <input type="checkbox" name="pizza-toppings" value="bike"> Sausage<br>
+          <input type="checkbox" name="pizza-toppings" value="bike"> Anchovy<br>
+          <input type="checkbox" name="pizza-toppings" value="bike"> Mushrooms<br>
+          <input type="checkbox" name="pizza-toppings" value="bike"> Olives<br>
+        </div>
+      </form>
+      <div class="output">
+        <h2>Order Details</h2>
+        <p>Thank you for your order! Our pizza technicians will start prepping right away!</p>
+        <p>Your total is: $<span id="total-cost"></span></p>
+      </div>
+    </div>
+  </body>
+</html>
