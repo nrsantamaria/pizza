@@ -38,15 +38,21 @@
           <input type="checkbox" name="pizza-toppings" value="Olives"> Olives<br>
         </div>
         <br>
-        <button type="submit" class="btn btn-success">Click to Order!</button>
+        <button type="submit" class="btn">Click to Order!</button>
       </form>
+      <div class="order-list">
+        <h2>Order List</h2>
+        <ul class="orders">
+
+        </ul>
+      </div>
       <div class="output">
         <h2>Order Details</h2>
         <p><strong><span id="customerName"></span></strong>, thank you for your order! Our pizza technicians will start prepping right away!</p>
         <p><strong>Pizza Size: </strong><span id="orderPizzaSize"></span>
         <p><strong>Toppings:</strong></p>
-        <ul id="orderPizzaToppings">
-
+        <ul>
+          <li id="orderPizzaToppings"></li>
         </ul>
         <p>Your total is: $<strong><span id="total-cost"></span></strong></p>
       </div>

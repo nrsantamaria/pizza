@@ -19,7 +19,8 @@ PizzaStore.prototype.orderPrice = function (){
     this.currentOrder.pizzaPrice += 10;
   } else if (this.currentOrder.orderPizzaSize === this.pizzaSizes[2]){
     this.currentOrder.pizzaPrice += 5;
-  } else if (this.currentOrder.orderPizzaToppings.length >= 1){
+  }
+    if (this.currentOrder.orderPizzaToppings.length >= 1){
     this.currentOrder.pizzaPrice += (this.currentOrder.orderPizzaToppings.length * 2);
   }
 };
@@ -27,11 +28,12 @@ PizzaStore.prototype.orderPrice = function (){
 Order.prototype.resetFields = function (){
   $("#name").val("");
   $(".pizza-size").val("");
-  $("input:checkbox[name=pizza-toppings]").prop("checked", false);
+  $("input:checkbox[name=pizza-toppings]:checked").prop("checked", false);
 };
 
 //User Interface Logic
 $(document).ready(function(){
+  //form submitted once button is clicked
   $("#order-form").submit(function(event){
     event.preventDefault();
     var nameInput = $("#name").val()
@@ -42,18 +44,26 @@ $(document).ready(function(){
 
     newPizzaStore.currentOrder = newOrder;
     newPizzaStore.currentOrder.orderPizzaSize = pizzaSizeInput;
-    $("#customerName").append(newOrder.customerName);
-    $("#orderPizzaSize").append(newOrder.orderPizzaSize);
 
     $("input:checkbox[name=pizza-toppings]:checked").each(function(){
       var pizzaToppingsInput = $(this).val();
       newOrder.orderPizzaToppings.push(pizzaToppingsInput);
-      $("#orderPizzaToppings").append("<li>" + pizzaToppingsInput + "</li>");
     });
-
+    //call orderPrice function to determine cost of selected items
     newPizzaStore.orderPrice();
-
-    $("#total-cost").append(newPizzaStore.currentOrder.pizzaPrice);
+    //call function to reset fields
     newOrder.resetFields();
+
+    //show list of customer names
+    $(".order-list").show();
+    $(".orders").append("<li><span class='orderLink'>" + newOrder.customerName + "</span></li>")
+    //show order details of customers once their name is clicked on
+    $(".orderLink").last().click(function(){
+      $(".output").show();
+      $("#customerName").text(newOrder.customerName);
+      $("#orderPizzaSize").text(newOrder.orderPizzaSize);
+      $("#orderPizzaToppings").text(newOrder.orderPizzaToppings.slice().join(", "));
+      $("#total-cost").text(newPizzaStore.currentOrder.pizzaPrice);
+    });
   });//form function close
 });//document ready function close

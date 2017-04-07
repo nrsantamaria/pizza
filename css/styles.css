@@ -9,3 +9,34 @@ body {
 strong {
   font-weight: bolder;
 }
+
+.jumbotron {
+  padding-left: 10%;
+  padding-right: 10%;
+  background-image: url("../img/pizza-slices.png");
+  background-size: 100%;
+  color: #A6002F;
+  text-align: center;
+}
+
+.btn {
+  background-color: #A6002F;
+  color: white;
+}
+
+.orderLink {
+  cursor: pointer;
+  color: #0088CC;
+}
+
+.orderLink {
+    text-decoration: underline;
+}
+
+.order-list {
+  display: none;
+}
+
+.output {
+  display: none;
+}
