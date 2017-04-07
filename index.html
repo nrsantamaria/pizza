@@ -29,17 +29,27 @@
         <br>
         <label for="toppings">Select your toppings:</label>
         <div class="toppings">
-          <input type="checkbox" name="pizza-toppings" value="bike"> Extra Cheese<br>
-          <input type="checkbox" name="pizza-toppings" value="bike"> Pepperoni<br>
-          <input type="checkbox" name="pizza-toppings" value="bike"> Sausage<br>
-          <input type="checkbox" name="pizza-toppings" value="bike"> Anchovy<br>
-          <input type="checkbox" name="pizza-toppings" value="bike"> Mushrooms<br>
-          <input type="checkbox" name="pizza-toppings" value="bike"> Olives<br>
+          <input type="checkbox" name="pizza-toppings" value="Extra Cheese"> Extra Cheese<br>
+          <input type="checkbox" name="pizza-toppings" value="Pepperoni"> Pepperoni<br>
+          <input type="checkbox" name="pizza-toppings" value="Sausage"> Sausage<br>
+          <input type="checkbox" name="pizza-toppings" value="Anchovy"> Anchovy<br>
+          <input type="checkbox" name="pizza-toppings" value="Mushrooms"> Mushrooms<br>
+          <input type="checkbox" name="pizza-toppings" value="Olives"> Olives<br>
         </div>
+        <br>
+        <button type="submit" class="btn btn-success">Click to Order!</button>
       </form>
       <div class="output">
         <h2>Order Details</h2>
         <p>Thank you for your order! Our pizza technicians will start prepping right away!</p>
+        <ul>
+          <li id="customerName"><strong>Name:</strong> </li>
+          <li id="orderPizzaSize"><strong>Pizza Size:</strong> </li>
+        </ul>
+        <p><strong>Toppings:</strong></p>
+        <ul id="orderPizzaToppings">
+
+        </ul>
         <p>Your total is: $<span id="total-cost"></span></p>
       </div>
     </div>
