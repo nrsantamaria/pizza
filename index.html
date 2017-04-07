@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Spirax" rel="stylesheet">
     <script src="js/jquery-3.2.0.js"></script>
     <script src="js/scripts.js"></script>
     <title>Pizza Palace</title>
@@ -41,16 +42,13 @@
       </form>
       <div class="output">
         <h2>Order Details</h2>
-        <p>Thank you for your order! Our pizza technicians will start prepping right away!</p>
-        <ul>
-          <li id="customerName"><strong>Name:</strong> </li>
-          <li id="orderPizzaSize"><strong>Pizza Size:</strong> </li>
-        </ul>
+        <p><strong><span id="customerName"></span></strong>, thank you for your order! Our pizza technicians will start prepping right away!</p>
+        <p><strong>Pizza Size: </strong><span id="orderPizzaSize"></span>
         <p><strong>Toppings:</strong></p>
         <ul id="orderPizzaToppings">
 
         </ul>
-        <p>Your total is: $<span id="total-cost"></span></p>
+        <p>Your total is: $<strong><span id="total-cost"></span></strong></p>
       </div>
     </div>
   </body>
