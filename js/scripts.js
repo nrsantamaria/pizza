@@ -12,25 +12,15 @@ function Order (customerName, orderPizzaSize) {
   this.pizzaPrice = 10;
 };
 
-PizzaStore.prototype.orderPricePizzaSize = function (){
+PizzaStore.prototype.orderPrice = function (){
   if (this.currentOrder.orderPizzaSize === this.pizzaSizes[0]){
     this.currentOrder.pizzaPrice += 15;
   } else if (this.currentOrder.orderPizzaSize === this.pizzaSizes[1]){
     this.currentOrder.pizzaPrice += 10;
   } else if (this.currentOrder.orderPizzaSize === this.pizzaSizes[2]){
     this.currentOrder.pizzaPrice += 5;
-  }
-};
-
-PizzaStore.prototype.orderPricePizzaTopping = function (){
-    if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[0]){
-    this.currentOrder.pizzaPrice += 1;
-  } else if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[1] || this.currentOrder.orderPizzaToppings === this.pizzaToppings[2]){
-    this.currentOrder.pizzaPrice += 4;
-  } else if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[3]){
-    this.currentOrder.pizzaPrice += 3;
-  } else if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[4] || this.currentOrder.orderPizzaToppings === this.pizzaToppings[5]){
-    this.currentOrder.pizzaPrice += 2;
+  } else if (this.currentOrder.orderPizzaToppings.length >= 1){
+    this.currentOrder.pizzaPrice += (this.currentOrder.orderPizzaToppings.length * 2);
   }
 };
 
@@ -52,7 +42,6 @@ $(document).ready(function(){
 
     newPizzaStore.currentOrder = newOrder;
     newPizzaStore.currentOrder.orderPizzaSize = pizzaSizeInput;
-
     $("#customerName").append(newOrder.customerName);
     $("#orderPizzaSize").append(newOrder.orderPizzaSize);
 
@@ -62,8 +51,7 @@ $(document).ready(function(){
       $("#orderPizzaToppings").append("<li>" + pizzaToppingsInput + "</li>");
     });
 
-    newPizzaStore.orderPricePizzaSize();
-    newPizzaStore.orderPricePizzaTopping();
+    newPizzaStore.orderPrice();
 
     $("#total-cost").append(newPizzaStore.currentOrder.pizzaPrice);
     newOrder.resetFields();
