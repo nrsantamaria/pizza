@@ -27,6 +27,21 @@ PizzaStore.prototype.orderPrice = function (){
   } else if (this.currentOrder.orderPizzaSize === this.pizzaSizes[2]){
     this.currentOrder.pizzaPrice += 5;
   }
+  // if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[0]){
+  //   this.currentOrder.pizzaPrice += 1;
+  // } else if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[1] || this.currentOrder.orderPizzaToppings === this.pizzaToppings[2]){
+  //   this.currentOrder.pizzaPrice += 4;
+  // } else if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[3]){
+  //   this.currentOrder.pizzaPrice += 3;
+  // } else if (this.currentOrder.orderPizzaToppings === this.pizzaToppings[4] || this.currentOrder.orderPizzaToppings === this.pizzaToppings[5]){
+  //   this.currentOrder.pizzaPrice += 2;
+  // }
+};
+
+Order.prototype.resetFields = function (){
+  $("#name").val("");
+  $(".pizza-size").val("");
+  $("input:checkbox[name=pizza-toppings]").prop( "checked", false );
 };
 
 //User Interface Logic
@@ -52,5 +67,6 @@ $(document).ready(function(){
     });
 
     $("#total-cost").append(newPizzaStore.currentOrder.pizzaPrice);
+    newOrder.resetFields();
   });//form function close
 });//document ready function close
