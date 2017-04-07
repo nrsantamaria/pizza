@@ -15,47 +15,57 @@
       <h2>Where you can order your favorite pizza, hot, fast and <em>cheesy!</em></h2>
     </div>
     <div class="container">
-      <form id="order-form">
-        <div class="form-group">
-          <label for="name">Please enter your name:</label>
-          <input id="name" type="text" class="form-control">
-        </div>
-        <label for="toppings">Select your pizza size:</label>
-        <select class="form-control pizza-size">
-          <option selected="selected" disabled>Pizza Size</option>
-          <option value="Large">Large ($25)</option>
-          <option value="Medium">Medium ($20)</option>
-          <option value="Small">Small ($15)</option>
-        </select>
-        <br>
-        <label for="toppings">Select your toppings <em>(add $2 per topping)</em>:</label>
-        <div class="toppings">
-          <input type="checkbox" name="pizza-toppings" value="Extra Cheese"> Extra Cheese<br>
-          <input type="checkbox" name="pizza-toppings" value="Pepperoni"> Pepperoni<br>
-          <input type="checkbox" name="pizza-toppings" value="Sausage"> Sausage<br>
-          <input type="checkbox" name="pizza-toppings" value="Anchovy"> Anchovy<br>
-          <input type="checkbox" name="pizza-toppings" value="Mushrooms"> Mushrooms<br>
-          <input type="checkbox" name="pizza-toppings" value="Olives"> Olives<br>
-        </div>
-        <br>
-        <button type="submit" class="btn">Click to Order!</button>
-      </form>
-      <div class="order-list">
-        <h2>Order List</h2>
-        <ul class="orders">
+      <div class="row">
+        <form id="order-form">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="name">Please enter your name:</label>
+                <input id="name" type="text" class="form-control" required>
+              </div>
+            </div> <!--first column close -->
+          <div class="col-md-4">
+            <label for="toppings">Select your pizza size:</label>
+            <select required class="form-control pizza-size">
+              <option value="">Pizza Size</option>
+              <option value="Large">Large ($25)</option>
+              <option value="Medium">Medium ($20)</option>
+              <option value="Small">Small ($15)</option>
+            </select>
+            <br>
+            <div class="well">
+              <label for="toppings">Select your toppings <em>(add $2 per topping)</em>:</label>
+              <div class="toppings">
+                <input type="checkbox" name="pizza-toppings" value="Extra Cheese"> Extra Cheese<br>
+                <input type="checkbox" name="pizza-toppings" value="Pepperoni"> Pepperoni<br>
+                <input type="checkbox" name="pizza-toppings" value="Sausage"> Sausage<br>
+                <input type="checkbox" name="pizza-toppings" value="Anchovy"> Anchovy<br>
+                <input type="checkbox" name="pizza-toppings" value="Mushrooms"> Mushrooms<br>
+                <input type="checkbox" name="pizza-toppings" value="Olives"> Olives<br>
+              </div> <!--toppings close -->
+            </div> <!--well close -->
+            <br>
+            <button type="submit" class="btn">Click to Order!</button>
+          </div> <!--second column close -->
+        </form>
+        <div class="col-md-4">
+          <div class="order-list">
+            <h2>Order List</h2>
+            <ul class="orders">
 
-        </ul>
-      </div>
-      <div class="output">
-        <h2>Order Details</h2>
-        <p><strong><span id="customerName"></span></strong>, thank you for your order! Our pizza technicians will start prepping right away!</p>
-        <p><strong>Pizza Size: </strong><span id="orderPizzaSize"></span>
-        <p><strong>Toppings:</strong></p>
-        <ul>
-          <li id="orderPizzaToppings"></li>
-        </ul>
-        <p>Your total is: $<strong><span id="total-cost"></span></strong></p>
-      </div>
-    </div>
+            </ul>
+          </div> <!--order list close -->
+          <div class="output">
+            <h2>Order Details</h2>
+            <p><strong><span id="customerName"></span></strong>, thank you for your order! Our pizza technicians will start prepping right away!</p>
+            <p><strong>Pizza Size: </strong><span id="orderPizzaSize"></span>
+            <p><strong>Toppings:</strong></p>
+            <ul>
+              <li id="orderPizzaToppings"></li>
+            </ul>
+            <p>Your total is: $<strong><span id="total-cost"></span></strong></p>
+          </div> <!--output close -->
+        </div> <!--third column close-->
+      </div><!--row close-->
+    </div> <!--container close -->
   </body>
 </html>

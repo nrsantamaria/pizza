@@ -19,6 +19,10 @@ strong {
   text-align: center;
 }
 
+.well {
+  background-color: rgba(248, 231, 207, 0.5);
+}
+
 .btn {
   background-color: #A6002F;
   color: white;
