@@ -23,7 +23,7 @@ _This webpage is a form with which collects the users name, pizza size and pizza
 * _On a mac using spotlight search type in terminal_
 * _Once in terminal run the command: cd desktop_
 * _Run the command: git clone https://github.com/nrsantamaria/pizza.git_
-* _Run the command: cd pingpong_
+* _Run the command: cd pizza_
 * _Run the command: atom ._
 * _This will open all of the files included in the survey folder including index.html, README.md, jquery-3.2.0.js, scripts.js, bootstrap.css and styles.css_
 * _To make changes to the text on the page that the user will see you will need to access the index.html file._
